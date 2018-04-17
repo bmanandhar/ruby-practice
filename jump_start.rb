@@ -1,4 +1,35 @@
-#Methods
+# Homework
+# Three Digit Format
+
+# Three Digit Format
+
+# Define a method, #three_digit_format(n), that accepts an integer, n, as an
+# argument. Assume that n < 1000. Your method should return a string version of
+# n, but with leading zeros such that the string is always 3 characters long.
+
+def three_digit_format(n)
+  # your code here
+  three_digit_format = ""
+  if n == 0
+    three_digit_format << n.to_s + "00"
+  elsif n < 10
+    three_digit_format << "00" + n.to_s
+  elsif n < 100
+    three_digit_format << "0" + n.to_s
+  else
+    three_digit_format << n.to_s
+  end
+
+  three_digit_format
+end
+
+puts "------Three Digit Format------"
+puts three_digit_format(100) == "100"
+puts three_digit_format(15) == "015"
+puts three_digit_format(6) == "006"
+
+
+#01 Methods
 # EASY
 
 # Write a method that returns its argument converted to a string.
@@ -137,9 +168,7 @@ def int_remainder_without_modulo(i_dividend, i_divisor)
   y.to_i
 end
 
-
-
-#Data Structures
+#02 Data Structures
 #==============
 # EASY
 
@@ -220,7 +249,6 @@ end
   end
   false
 end
-
 
 # HARD
 
