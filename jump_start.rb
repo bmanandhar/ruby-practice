@@ -250,3 +250,224 @@ def my_rotate(arr, offset=1)
   shift = offset % arr.length
   arr.drop(shift) + arr.take(shift)
 end
+
+#######
+#03 Control Flow
+
+# EASY
+
+# Return the argument with all its uppercase characters removed.
+def destructive_uppercase(str)
+  # your code goes here
+  temp = ""
+  i = 0
+  while i < str.length
+    if str[i].upcase.include?(str[i]) == false
+      temp << str[i]
+    end
+    i += 1
+  end
+  temp
+end
+
+# Return the middle character of a string. Return the middle two characters if the word is of even length, e.g. middle_substring("middle") => "dd", middle_substring("mid") => "i"
+def middle_substring(str)
+  # your code goes here
+  x = str.length
+  if x % 2 == 1
+    return str[x/2]
+  else
+    str[x/2 - 1] + str[x/2]
+  end
+end
+
+# Return the number of vowels in a string.
+def num_vowels(str)
+  # your code goes here
+
+  vowels = ["a","A","e","E","i","I","o","u","U"]
+  num_vowels = 0
+
+  i = 0
+  while i < str.length
+    if vowels.include?(str[i])
+      num_vowels += 1
+    end
+    i += 1
+
+  end
+  num_vowels
+end
+
+# Return the factoral of the argument (num!). A number's factorial is the product of all whole numbers between 1 and the number itself. Assume the argument will be > 0.
+def factorial(num)
+  # your code goes here
+  factorial = 1
+
+  factorial = num
+  while num > 1
+    num -= 1
+    factorial *= num
+  end
+
+  factorial
+end
+
+
+# MEDIUM
+
+# Write your own version of the join method. separator="" ensures that the default argument is "".
+def my_join(arr, separator="")
+  # your code goes here
+  my_join = ""
+
+  i=0
+  while i<arr.length
+    if i < arr.length - 1
+      my_join += arr[i] + separator
+    else
+      my_join += arr[i]
+    end
+    i+=1
+  end
+  my_join
+end
+
+# Write a method that converts its argument to weirdcase, where every odd character is lowercase and every even is uppercase, e.g. weirdcase("weirdcase") => "wEiRdCaSe"
+def weirdcase(str)
+  # your code goes here
+  weirdcase = ""
+
+  i = 0
+  while i < str.length
+    if i % 2 == 0
+      weirdcase << str[i].downcase
+    else
+      weirdcase << str[i].upcase
+    end
+    i += 1
+  end
+  weirdcase
+
+end
+
+# Reverse all words of five or more letters in a string. Return the resulting string, e.g., reverse_five("Looks like my luck has reversed") => "skooL like my luck has desrever").
+def reverse_five(str)
+  # your code goes here
+  temp = str.split(" ")
+
+  for i in 0 ... temp.length
+    if temp[i].length >= 5
+      temp[i].reverse!
+    end
+  end
+  temp.join(" ")
+
+end
+
+# Return an array of integers from 1 to 30 (inclusive), except for each multiple of 3 replace the integer with "fizz", for each multiple of 5 replace the integer with "buzz", and for each multiple of both 3 and 5, replace the integer with "fizzbuzz".
+def fizzbuzz
+  # your code goes here
+  arr = []
+
+  for i in 1 .. 30
+    if i % 5 == 0 && i % 3 == 0
+    arr << "fizzbuzz"
+
+    elsif i % 3 == 0
+      arr << "fizz"
+
+    elsif i % 5 == 0
+      arr << "buzz"
+
+    else arr << i
+    end
+  end
+  arr
+end
+
+
+# HARD
+
+# Write a method that returns a new array containing all the elements of the original array in reverse order.
+def my_reverse(arr)
+  # your code goes here
+
+  my_reverse = []
+  i = arr.length-1
+  while i >= 0
+    my_reverse << arr[i]
+    i -= 1
+  end
+  my_reverse
+end
+
+# Write a method that returns a boolean indicating whether the argument is prime.
+def prime?(num)
+  # your code goes here
+  prime = []
+  for i in 1 .. num
+    if num % i == 0
+      prime << i
+    end
+  end
+  prime.length == 2
+end
+
+# Write a method that returns a sorted array of the factors of its argument.
+def factors(num)
+  # your code goes here
+
+  factors = []
+  for i in 1 .. num
+    if num % i == 0
+      factors << i
+    end
+  end
+  factors
+end
+
+# Write a method that returns a sorted array of the prime factors of its argument.
+def prime_factors(num)
+  # your code goes here
+  prime_factors = []
+  for i in 1 .. num
+    if num % i == 0 && prime?(i)
+      prime_factors << i
+    end
+  end
+  prime_factors
+end
+
+# Write a method that returns the number of prime factors of its argument.
+def num_prime_factors(num)
+  # your code goes here
+  prime_factors(num).length
+
+end
+
+
+# EXPERT
+
+# Return the one integer in an array that is even or odd while the rest are of opposite parity, e.g. oddball([1,2,3]) => 2, oddball([2,4,5,6] => 5)
+def oddball(arr)
+  # your code goes here
+  evens = []
+  odds = []
+
+  arr.each do |int|
+
+  if int % 2 == 0
+    evens << int
+  else
+    odds << int
+  end
+
+  end
+  if evens.length == 1
+    return evens[0]
+  else
+    return odds[0]
+  end
+
+end
