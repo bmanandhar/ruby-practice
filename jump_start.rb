@@ -10,9 +10,7 @@
 def three_digit_format(n)
   # your code here
   three_digit_format = ""
-  if n == 0
-    three_digit_format << n.to_s + "00"
-  elsif n < 10
+  if n < 10
     three_digit_format << "00" + n.to_s
   elsif n < 100
     three_digit_format << "0" + n.to_s
