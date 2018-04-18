@@ -1,4 +1,29 @@
-# Homework
+# Homework Due W1D3
+# Every Other Letter
+
+# Define a method, #every_other_letter(string), that accepts a string as an argument.
+# This method should return a new string that contains every other letter of the
+# original string, starting with the first character. Treat white-space
+# and punctuation the same as letters.
+
+def every_other_letter(string)
+  # your code here
+  every_other_letter = ""
+  i = 0
+  for i in 0 ... string.length
+    if i % 2 == 0
+      every_other_letter << string[i]
+    end
+  end
+  every_other_letter
+end
+
+puts "------Every Other Letter------"
+puts every_other_letter("abcde") == "ace"
+puts every_other_letter("i heart ruby") == "ihatrb"
+puts every_other_letter("an apple a day...") == "a pl  a.."
+
+# Homework Due W1D2
 # Three Digit Format
 
 # Three Digit Format
