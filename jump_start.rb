@@ -523,7 +523,7 @@ def oddball(arr)
 
 end
 
-#Step One Practice Assessment 
+#Step One Practice Assessment
 
 # A "slippery number" has 3 as a factor or has 5 as a factor, but not both. 6 is a slippery, but 30 is not. Define a method that returns a boolean indicating whether its argument is slippery.
 def is_slippery?(n)
