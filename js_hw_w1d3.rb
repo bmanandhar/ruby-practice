@@ -19,11 +19,24 @@ def wild_sum(n)
     elsif i % 6 != 0 && i % 3 == 0
       wild_sum += i
     end
-
-
   end
   wild_sum
 
+end
+
+###
+def find_factors(n, possible_factors)
+factors = []
+
+  i = 0
+  while i < possible_factors.length
+    possible= possible_factors[i]
+    factors << possible if (n % possible).zero?
+
+    i += 1
+  end
+
+  factors
 end
 
 puts "------Wild Sum------"
