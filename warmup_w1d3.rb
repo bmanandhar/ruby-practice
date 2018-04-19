@@ -43,3 +43,23 @@ puts "---------Find Factors----------"
 puts find_factors(33, [1, 10, 11, 15, 18, 20]) == [1, 11]
 puts find_factors(81, [2, 3, 9, 16, 51, 53]) == [3, 9]
 puts find_factors(17, [2, 3, 4, 5, 6, 7, 8, 9]) == []
+
+
+def find_factors(n, possible_factors)
+  find_factors = []
+
+  i = 0
+  while i < possible_factors.length
+    if n % possible_factors[i] == 0
+      find_factors << possible_factors[i]
+    end
+  i += 1
+  end
+
+  find_factors
+end
+
+puts "---------Find Factors----------"
+puts find_factors(33, [1, 10, 11, 15, 18, 20]) == [1, 11]
+puts find_factors(81, [2, 3, 9, 16, 51, 53]) == [3, 9]
+puts find_factors(17, [2, 3, 4, 5, 6, 7, 8, 9]) == []
