@@ -47,12 +47,11 @@ def two_sum_to_zero?(arr)
   arr.each_index {|index|
     index_out = arr.slice(0, index) +arr.slice(index +1, arr.length)
 
-    if index_out.include?(-arr[index])
-      return true
-    end
+    return true if index_out.include?(-arr[index])
     }
  false
 end
+p two_sum_to_zero?([2, 3, 1, -5])
 
 # Define a method that returns the longest word in its argument.
 def longest_word(str)
