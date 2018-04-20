@@ -8,6 +8,13 @@ def capitalize_each_word(str)
   str.split(" ").map! {|word| word.capitalize}.join(" ")
 end
 
+def capitalize_each_word(str)
+  capitalized_arr = []
+  str.split(" ").each {|word| capitalized_arr << word.capitalize}
+
+  capitalized_arr.join(" ")
+end
+
 =begin
 # Define a method that takes an array of integers
 and returns an array of the square of each.
