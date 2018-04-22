@@ -53,6 +53,23 @@ def two_sum_to_zero?(arr)
 end
 p two_sum_to_zero?([2, 3, 1, -5])
 
+# Method -2
+def two_sum_to_zero?(arr)
+  i = 0
+  while i < arr.length - 1
+    j = i + 1
+    while j < arr.length
+      if arr[i] + arr[j] == 0
+        return true
+      end
+      j += 1
+    end
+    i += 1
+  end
+  return false
+end
+two_sum_to_zero?([2, 3, 1, -5]) 
+
 # Define a method that returns the longest word in its argument.
 def longest_word(str)
 
