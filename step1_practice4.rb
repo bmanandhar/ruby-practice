@@ -78,7 +78,7 @@ def largest_pair(pairs_array)
   end
   largest
 end
-
+# helper method:
 def sum_array(arr)
   sum = 0
   i = 0
