@@ -11,6 +11,18 @@ def array_times_two(arr)
   array_times_two
 
 end
+# Another method for array_times_two
+
+def array_times_two(arr)
+  result = []
+
+  i = 0
+  while i < arr.length
+    result << arr[i] * 2
+    i += 1
+  end
+  result
+end
 
 =begin
 # Define a method that, given an array of numbers,
@@ -52,22 +64,22 @@ and returns the pair with the greatest sum.
 =end
 def largest_pair(pairs_array)
 
-  # sum of the first array in pairs_array
-  sum = pairs_array[0][0] + pairs_array[0][1]
+  # assume greatest sum as the sum total of first array
+  greatest_sum = pairs_array[0].reduce(0, :+)
 
   # empty array created
   largest_pair = []
-  pairs_array.each {|arr|
+  pairs_array.each { |arr|
 
   # sum of each array in pairs_array
-  sum_each = arr[0] + arr[1]
+  sum_each = arr.reduce(0, :+)
 
     # comparing each sum
-    if sum_each >= sum
-      sum = sum_each
+    if sum_each >= greatest_sum
+      greatest_sum = sum_each
       largest_pair = arr
-    end
-   }
-
+    end }
    largest_pair
 end
+
+p largest_pair([[-4,0],[-2,-1],[-3,2]])
