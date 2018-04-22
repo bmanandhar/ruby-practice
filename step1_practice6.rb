@@ -59,7 +59,7 @@ def two_sum_to_zero?(arr)
   while i < arr.length - 1
     j = i + 1
     while j < arr.length
-      return true if arr[i] == -arr[j]
+      return true if arr[i] == - arr[j]
       j += 1
     end
     i += 1
