@@ -62,13 +62,64 @@ and returns the pair with the greatest sum.
 # largest_pair([[-4,0],[-2,-1],[-3,2]]) => [-3,2]
 # largest_pair([[1,0]]) => [1,0]
 =end
+# Using helper method
+
+def largest_pair(pairs_array)
+
+  sum_pair = 0
+  largest = []
+  i = 0
+  while i < pairs_array.length
+    if sum_array(pairs_array[i]) > sum_pair
+      sum_pair = sum_array(pairs_array[i])
+      largest = pairs_array[i]
+    end
+    i += 1
+  end
+  largest
+end
+
+def sum_array(arr)
+  sum = 0
+  i = 0
+  while i < arr.length
+    sum += arr[i]
+    i += 1
+  end
+  sum
+end
+# Other method
+
+def largest_pair(pairs_array)
+  sum, sum_pair, largest = 0, 0, []
+  i = 0
+  while i < pairs_array.length
+    j = 0
+    while j < pairs_array[i].length
+      sum_pair += pairs_array[i][j]
+      j += 1
+    end
+    if sum_pair > sum
+      sum = sum_pair
+      largest = pairs_array[i]
+    end
+    i += 1
+  end
+  largest
+end
+
+# One more method
+
 def largest_pair(pairs_array)
 
   # assume greatest sum as the sum total of first array
+  # greatest_sum = pairs_array[0].reduce(0, :+)
   greatest_sum = pairs_array[0].reduce(0, :+)
 
   # empty array created
   largest_pair = []
+
+  # iterates through arrays in pairs_array
   pairs_array.each { |arr|
 
   # sum of each array in pairs_array
@@ -79,7 +130,10 @@ def largest_pair(pairs_array)
       greatest_sum = sum_each
       largest_pair = arr
     end }
+
    largest_pair
 end
 
-p largest_pair([[-4,0],[-2,-1],[-3,2]])
+p largest_pair([[2,6], [4,-2], [1,9]])
+p largest_pair([[1,0]])
+p largest_pair([[-4, 0], [-2, -1], [-3, 2]])
