@@ -63,7 +63,7 @@ and returns the pair with the greatest sum.
 # largest_pair([[1,0]]) => [1,0]
 =end
 # Using helper method
-
+# Main method
 def largest_pair(pairs_array)
 
   sum_pair = 0
@@ -78,7 +78,7 @@ def largest_pair(pairs_array)
   end
   largest
 end
-# helper method:
+# helper method for above Main method 
 def sum_array(arr)
   sum = 0
   i = 0
