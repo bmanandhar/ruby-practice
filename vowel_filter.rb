@@ -1,5 +1,5 @@
 def disemvowel(str)
-  vowels = ['a', 'e', 'i', 'o', 'u']
+  vowels = 'aeiou'
   new_str = ""
   i = 0
   while i < str.length
@@ -14,3 +14,4 @@ def disemvowel(str)
 
   new_str
 end
+p disemvowel('This will remove all vowels with index odd')
