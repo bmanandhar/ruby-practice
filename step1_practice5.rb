@@ -37,7 +37,7 @@ end
 
 p palindrome?("madam") == true
 p palindrome?("revolver") == false
-p palindrome?("rotator") == true 
+p palindrome?("rotator") == true
 =begin
 # Define a method, boolean_to_binary(arr),
 that accepts an array of booleans as an argument.
@@ -66,6 +66,23 @@ def boolean_to_binary(arr)
 
   binary
 end
+
+# other method
+
+def boolean_to_binary(arr)
+
+  i = 0
+  while i < arr.length
+    if arr[i] == true
+      arr[i] = "1"
+    elsif arr[i] == false
+    arr[i] = "0"
+    end
+    i += 1
+  end
+  arr.join
+end
+boolean_to_binary([true, false, true])
 
 =begin
 # Define a method that returns the third-largest element
