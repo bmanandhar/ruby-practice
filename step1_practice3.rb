@@ -40,6 +40,28 @@ def pair_product?(arr, target_product)
 		end
 	false
 end
+#===Another method for pair_product
+
+def pair_product?(arr, target_product)
+
+  i = 0
+  while i < arr.length
+
+    j = i+1
+    while j < arr.length
+
+      if arr[i]*arr[j] == target_product
+        return true
+      else
+        return false
+      end
+
+      j += 1
+    end
+
+    i += 1
+  end
+end
 
 =begin
 # Define a method, #slice_between_vowels(word),
@@ -74,4 +96,4 @@ def slice_between_vowels(word)
 
   # forms new word between first and last vowels
   word[left_i +1...right_i]
-end 
+end
