@@ -15,8 +15,29 @@ def palindrome?(str)
   end
 
     str[0 ... left].downcase == str[left +1 .. -1].downcase.reverse
+
+#other method
+def palindrome?(str)
+  half = nil
+
+  if str.length % 2 == 1
+    half = str.length/2
+  else half = str.length/2 +1
+  end
+
+  i, left_half, right_half = 0, "", ""
+
+  while i < half
+    left_half << str[i]
+    right_half << str[-i -1]
+    i += 1
+  end
+  left_half == right_half
 end
 
+p palindrome?("madam") == true
+p palindrome?("revolver") == false
+p palindrome?("rotator") == true 
 =begin
 # Define a method, boolean_to_binary(arr),
 that accepts an array of booleans as an argument.
