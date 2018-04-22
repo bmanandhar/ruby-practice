@@ -113,7 +113,6 @@ end
 def largest_pair(pairs_array)
 
   # assume greatest sum as the sum total of first array
-  # greatest_sum = pairs_array[0].reduce(0, :+)
   greatest_sum = pairs_array[0].reduce(0, :+)
 
   # empty array created
