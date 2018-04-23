@@ -1,3 +1,35 @@
+#Method- 1
+def bubble_sort(arr)
+  n = arr.length - 1
+  i = 0
+  while i < n
+    j = 0
+    while j < n - i
+      if arr[j] > arr[j + 1]
+        arr[j], arr[j + 1] = arr[j + 1], arr[j]
+      end
+      j += 1
+    end
+    i += 1
+  end
+  arr
+end
+
+#Method- 2
+
+def bubble_sort(arr)
+  for i in 0...arr.length - 1
+    for j in 0...arr.length - 1 - i
+      if arr[j] > arr[j + 1]
+        arr[j], arr[j + 1] = arr[j + 1], arr[j]
+      end
+    end
+  end
+  arr
+end
+
+#Method- 3
+
 def bubble_sort(arr)
   sorted = false
 
