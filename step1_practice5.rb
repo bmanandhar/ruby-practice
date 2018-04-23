@@ -105,7 +105,7 @@ def third_largest(arr)
       i, ii, iii = n, i, ii
 
     elsif n >= ii
-      ii, iii = n, iii
+      ii, iii = n, ii
 
     else iii = n
     end
