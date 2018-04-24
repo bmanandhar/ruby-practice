@@ -1,5 +1,4 @@
 def cats_in_hats
-  # your code here
   #hash-table initialized with status "off"
   cats_hats = Hash.new
   (1..100).each {|cat_num| cats_hats[cat_num] = "off"}
@@ -13,17 +12,15 @@ def cats_in_hats
 
       elsif nth % visit == 0 && on_off == "on"
         cats_hats[nth] = "off"
-
       end
     }
 
     visit += 1
   end
-  #select key with value only "on"
-  cats_hats.select {|nth, on_off| on_off == "on"}.keys
-end
 
-cats_in_hats
+  cats_hats.select {|key, value| value == "on"}.keys
+end
+p cats_in_hats
 
 puts "------Cats in Hats------"
 puts cats_in_hats == [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
