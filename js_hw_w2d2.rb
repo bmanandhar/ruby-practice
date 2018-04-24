@@ -6,13 +6,13 @@ def cats_in_hats
   #iteration for hat status "on"/"off"
   visit = 1
   while visit < 101
-    cats_hats.each {|k, v|
+    cats_hats.each {|nth, on_off|
 
-      if k % visit == 0 && v == "off"
-        cats_hats[k] = "on"
+      if nth % visit == 0 && on_off == "off"
+        cats_hats[nth] = "on"
 
-      elsif k % visit == 0 && v == "on"
-        cats_hats[k] = "off"
+      elsif nth % visit == 0 && on_off == "on"
+        cats_hats[nth] = "off"
 
       end
     }
@@ -20,10 +20,10 @@ def cats_in_hats
     visit += 1
   end
   #select key with value only "on"
-  cats_hats.select {|k, v| v == "on"}.keys
+  cats_hats.select {|nth, on_off| on_off == "on"}.keys
 end
 
- p cats_in_hats
+cats_in_hats
 
 puts "------Cats in Hats------"
 puts cats_in_hats == [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
