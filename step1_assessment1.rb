@@ -66,6 +66,34 @@ def thirds_product(array)
   result
 end
 
+#Method-3, using helper method
+def thirds_product(array)
+
+  #condition-1
+  1 if array.length < 3
+  arr = array
+  product_of(arr)
+
+end
+#below this line is helper method for above
+def product_of(arr)
+  result = 1
+  i = 0
+  while i < arr.length
+    result *= arr[i] if (i + 1) % 3 == 0
+    i += 1
+  end
+  result
+end
+
+puts "-------Thirds Product-------"
+puts thirds_product([1, 2]) == 1
+puts thirds_product([1, 2, 0]) == 0
+puts thirds_product([0, 1, 2, 3, 4, 5]) == 10
+puts thirds_product([1, 2, 5, 3, 4, 2, 6, 4, 2]) == 20
+
+
+
 # ------------------------------------------------------------------------------
 
 # How Many Likes?
@@ -73,7 +101,7 @@ end
 # Define a method, #how_many_likes?(sentence) that accepts a string as an
 # argument. Your method should cound the number of times the sentence uses
 # the word "like".
-
+#Method-1
 def how_many_likes?(sentence)
 
   x = sentence.split(" ")
@@ -83,6 +111,27 @@ def how_many_likes?(sentence)
   i = 0
   while i < x.length
     total += 1 if x[i] == "like"
+    i += 1
+  end
+
+  total
+end
+
+#Method-2, using helper
+def how_many_likes?(sentence)
+
+  x = sentence.split(" ")
+  count_likes(x)
+end
+
+#below this line is helper-method for above
+
+def count_likes(arr)
+  total = 0
+
+  i = 0
+  while i < arr.length
+    total += 1 if arr[i] == "like"
     i += 1
   end
 
@@ -104,7 +153,7 @@ puts how_many_likes?("this is like totally like too many like words") == 3
 # boolean indicating whether any pair of elements in the array multiplied
 # together equals that product. You cannot multiply an element by itself.
 # An element on its own is not a product.
-
+#Method-1, basic
 def pair_product?(arr, target_product)
 
   i = 0
