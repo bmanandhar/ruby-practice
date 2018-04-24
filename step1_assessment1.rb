@@ -31,11 +31,11 @@ puts reverse_digits(12345678) == 87654321
 # element.
 
 # ex: thirds_product([0, 1, 2, 3, 4, 5, 6, 7, 8]) ==> 2 * 5 * 8 == 80
-
+#Method-1, using each method
 def thirds_product(array)
 
   #condition-1
-  return 1 if array.length < 3
+  1 if array.length < 3
 
   result = 1
 
@@ -49,6 +49,22 @@ puts thirds_product([1, 2]) == 1
 puts thirds_product([1, 2, 0]) == 0
 puts thirds_product([0, 1, 2, 3, 4, 5]) == 10
 puts thirds_product([1, 2, 5, 3, 4, 2, 6, 4, 2]) == 20
+
+#Method-2, using while loop
+
+def thirds_product(array)
+
+  #condition-1
+  1 if array.length < 3
+  result = 1
+  i = 0
+  while i < array.length
+    result *= array[i] if (i + 1) % 3 == 0
+    i += 1
+  end
+
+  result
+end
 
 # ------------------------------------------------------------------------------
 
