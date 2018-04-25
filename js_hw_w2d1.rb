@@ -16,7 +16,7 @@ def two_sum(array, target)
   array.each_index {|index|
 
     # indexed element being exluded to check given condition
-    index_out = array[0 ... index] + array[index +1 .. array.length]
+    index_out = array[index + 1 .. array.length]
 
     # result returns as true if condition fulfils
     return true if index_out.include?(target -array[index])

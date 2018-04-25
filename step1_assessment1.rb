@@ -35,7 +35,7 @@ puts reverse_digits(12345678) == 87654321
 def thirds_product(array)
 
   #condition-1
-  1 if array.length < 3
+  return 1 if array.length < 3
 
   result = 1
 
