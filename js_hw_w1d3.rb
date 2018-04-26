@@ -44,3 +44,5 @@ factors = []
 
   factors
 end
+p "-------possible_factor------"
+p find_factors(80, [2,5,4,3,10]) == [2, 5, 4, 10]
