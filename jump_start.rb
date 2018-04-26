@@ -34,16 +34,7 @@ puts every_other_letter("an apple a day...") == "a pl  a.."
 
 def three_digit_format(n)
   # your code here
-  three_digit_format = ""
-  if n < 10
-    three_digit_format << "00" + n.to_s
-  elsif n < 100
-    three_digit_format << "0" + n.to_s
-  else
-    three_digit_format << n.to_s
-  end
-
-  three_digit_format
+  n.to_s.rjust(3, "0")
 end
 
 puts "------Three Digit Format------"
