@@ -448,6 +448,7 @@ end
 def prime?(num)
   # your code goes here
   prime = []
+
   for i in 1 .. num
     if num % i == 0
       prime << i
@@ -455,6 +456,7 @@ def prime?(num)
   end
   prime.length == 2
 end
+p "--prime?---"
 
 # Write a method that returns a sorted array of the factors of its argument.
 def factors(num)
@@ -519,7 +521,7 @@ end
 # A "slippery number" has 3 as a factor or has 5 as a factor, but not both. 6 is a slippery, but 30 is not. Define a method that returns a boolean indicating whether its argument is slippery.
 def is_slippery?(n)
 
-  if n % 15 == 0
+  if n % (3 * 5) == 0
     false
   elsif n % 3 == 0 || n % 5 == 0
     true
@@ -543,7 +545,7 @@ end
 # e_words("Let be be finale of seem.") => 3
 def e_words(str)
   count = 0
-  str.split(" ").each {|w| w[-1] == 'e' ? count += 1: next}
+  str.split(" ").each {|w| w[-1] == 'e'? count += 1: next}
   count
 end
 
