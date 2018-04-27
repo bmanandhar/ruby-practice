@@ -91,13 +91,27 @@ def prime?(int)
 
   arr = [] # empty array to store results
 
-  i = 4
+  i = 4 # modulo of 4 for ints 1, 2 and 3 are never zero
   while i < int # iteration to check
     arr << i if int % i == 0
     i += 1
   end
 
   arr.length == 0  # result "true/false"
+end
+
+puts "-------Prime?-------"
+puts prime?(1) == true
+puts prime?(16) == false
+puts prime?(17) == true
+puts prime?(101) == true
+
+def prime?(int)
+
+  n = 4
+  while (n...int)
+    return int % n != 0
+  end
 end
 
 puts "-------Prime?-------"
