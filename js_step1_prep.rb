@@ -81,12 +81,12 @@ back_to_the_numbers_game.map.with_index {|num, i| num - i} #=> [1, 1, 1]
 #helper method
 def num_vowels(word)
   vowels = ["a", "e", "i", "o", "u"]
-  word.chars.count {|ch| voweld.include?(ch.downcase)}
+  word.chars.count {|ch| vowels.include?(ch.downcase)}
 end
 
 def order_by_num_vowels(str)
   words = str.split
   words.sort_by {|word| num_vowels(word)}
 end
-return_value of order_by_num_vowels("Miracle bird or golden handiwork")
+order_by_num_vowels("Miracle bird or golden handiwork")
 # => ["bird", "or", "golden", "Miracle", "handiwork"]
